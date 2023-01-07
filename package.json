@@ -1,7 +1,7 @@
 {
-  "name": "ts-npm-package-boilerplate",
-  "version": "0.2.1",
-  "description": "TypeScript NPM Module Boilerplate",
+  "name": "@localtools/base64",
+  "version": "0.0.1",
+  "description": "Node.js Base64 Text Encoder/Decoder",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -9,27 +9,42 @@
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
-    "test": "jest --config jest.config.js",
+    "test": "jest --config jest.config.cjs",
+    "test:cov": "npm test -- --coverage",
+    "test:watch": "npm test -- --watch",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "npm test -- --config jest-e2e.cjs",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hebertcisco/ts-npm-package-boilerplate.git"
+    "url": "git+https://github.com/localtools/nodejs-base64.git"
   },
   "keywords": [
-    "boilerplate",
-    "typescript"
+    "base64",
+    "encoding",
+    "decoding",
+    "text",
+    "string",
+    "binary",
+    "data",
+    "convert",
+    "transformation",
+    "utility"
   ],
   "author": "Hebert Cisco",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hebertcisco/ts-npm-package-boilerplate/issues"
+    "url": "https://github.com/localtools/nodejs-base64/issues"
   },
-  "homepage": "https://github.com/hebertcisco/ts-npm-package-boilerplate#readme",
+  "homepage": "https://github.com/localtools/nodejs-base64#readme",
   "devDependencies": {
     "@types/jest": "29.2.4",
     "@typescript-eslint/eslint-plugin": "5.46.0",
