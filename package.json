@@ -1,9 +1,10 @@
 {
   "name": "@localtools/base64",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node.js Base64 Text Encoder/Decoder",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write \"src/**/*.(js|ts)\"",
@@ -19,9 +20,6 @@
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
@@ -39,7 +37,11 @@
     "transformation",
     "utility"
   ],
-  "author": "Hebert Cisco",
+  "author": "LocalTools",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/localtools/nodejs-base64/issues"
