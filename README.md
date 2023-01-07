@@ -1,89 +1,65 @@
-<p align="center">
- <img width="100px" src="https://raw.githubusercontent.com/localtools/nodejs-base64/main/.github/images/favicon512x512-npm.png" align="center" alt=":package: nodejs-base64" />
- <h2 align="center">:package: nodejs-base64</h2>
- <p align="center">Node.js Base64 Text Encoder/Decoder</p>
-  <p align="center">
-    <a href="https://github.com/localtools/nodejs-base64/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/localtools/nodejs-base64?style=flat&color=336791" />
-    </a>
-    <a href="https://github.com/localtools/nodejs-base64/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/localtools/nodejs-base64?style=flat&color=336791" />
-    </a>
-     <a href="https://github.com/localtools/nodejs-base64">
-      <img alt="GitHub Downloads" src="https://img.shields.io/npm/dw/nodejs-base64?style=flat&color=336791" />
-    </a>
-    <a href="https://github.com/localtools/nodejs-base64">
-      <img alt="GitHub Total Downloads" src="https://img.shields.io/npm/dt/nodejs-base64?color=336791&label=Total%20downloads" />
-    </a>
- <a href="https://github.com/localtools/nodejs-base64">
-      <img alt="GitHub release" src="https://img.shields.io/github/release/localtools/nodejs-base64.svg?style=flat&color=336791" />
-    </a>
-    <br />
-    <br />
-  <a href="https://github.com/localtools/nodejs-base64/issues/new/choose">Report Bug</a>
-  <a href="https://github.com/localtools/nodejs-base64/issues/new/choose">Request Feature</a>
-  </p>
- <h3 align="center">Systems on which it has been tested:</h3>
- <p align="center">
-   <a href="https://www.apple.com/br/macos/">
-      <img alt="Macos" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white&style=flat" />
-    </a>
-    <a href="https://ubuntu.com/download">
-      <img alt="Ubuntu" src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white&style=flat" />
-    </a>
-    <a href="https://www.microsoft.com/pt-br/windows/">
-      <img alt="Windows" src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white&style=flat" />
-    </a>
-  </p>
-<p align="center">Did you like the project? Please, considerate <a href="https://www.buymeacoffee.com/hebertcisco">a donation</a> to help improve!</p>
+# @localtools/base64
 
-<p align="center"><strong>Node.js Base64 Text Encoder/Decoder</strong>✨</p>
-
-[![codecov](https://codecov.io/gh/localtools/nodejs-base64/branch/main/graph/badge.svg?token=Q9fr548J0D)](https://codecov.io/gh/localtools/nodejs-base64)
-
-# Getting started
+A Node.js library for encoding and decoding text as Base64.
 
 ## Installation
 
-> Clone this repository: `git clone https://github.com/localtools/nodejs-base64`
+To install `@localtools/base64`, run the following command:
 
-### Open the directory and run the script line
-
-```bash
-cd nodejs-base64 
+```ts
+npm install @localtools/base64
 ```
 
-```bash
-npm i  # or yarn
+## Usage
+
+To use `@localtools/base64`, import the `Base64` class and call its `encode` and `decode` methods:
+
+```ts
+import { Base64 } from '@localtools/base64';
+
+const encodedText = Base64.encode({ text: 'hello world' });
+console.log(encodedText); // Outputs: "aGVsbG8gd29ybGQ="
+
+const decodedText = Base64.decode({ base64Text: encodedText });
+console.log(decodedText); // Outputs: "hello world"
 ```
 
-```bash
-rm -rf .git && git init && git add . && git commit -m "Initial commit" #Optional
-```
+The `encode` method takes an object with a `text` field, and returns the Base64 encoding of the text. The `decode` method takes an object with a `base64Text` field, and returns the text represented by the Base64 encoding.
 
-Or create use the button "Use this template"
+## API
 
-Edit the Icon on Figma:
+### `Base64.encode(args: EncodeArgs): string`
 
-<a href="https://www.figma.com/file/vpevGX3j9tmtW8OyLQ9eUm/nodejs-base64-icon?node-id=0%3A1">
-   <img alt="Figma Icon" src="https://raw.githubusercontent.com/localtools/nodejs-base64/main/.github/images/figma-badge.png"/>
-</a>
+Encodes a text string as a Base64 string.
 
-## 🤝 Contributing
+#### Parameters
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](issues).
+- `args` (`EncodeArgs`): An object with the following fields:
+  - `text` (`string`): The text to encode.
+  - `encoding` (`string`): The encoding to use. Defaults to `'base64'`.
+  - `start` (`number`): The index of the first character in the text to encode. Defaults to `0`.
+  - `end` (`number`): The index of the last character in the text to encode. Defaults to `text.length`.
 
-## Show your support
+#### Returns
 
-Give a ⭐️ if this project helped you!
+A Base64-encoded string.
 
-Or buy me a coffee 🙌🏾
+### `Base64.decode(args: DecodeArgs): string`
 
-<a href="https://www.buymeacoffee.com/hebertcisco">
-    <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=hebertcisco&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" />
-</a>
+Decodes a Base64 string as a text string.
+
+#### Parameters
+
+- `args` (`DecodeArgs`): An object with the following fields:
+  - `base64Text` (`string`): The Base64 string to decode.
+  - `fromEncoding` (`string`): The encoding of the Base64 string. Defaults to `'base64'`.
+  - `outputEncoding` (`string`): The encoding to use for the output text. Defaults to `'utf8'`.
+
+#### Returns
+
+The text represented by the Base64 string.
 
 ## 📝 License
 
-Copyright © 2022 [Hebert F Barros](https://github.com/hebertcisco).<br />
+Copyright © 2023 [LocalTools](https://github.com/localtools).<br />
 This project is [MIT](LICENSE) licensed.
