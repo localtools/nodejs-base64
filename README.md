@@ -1,5 +1,14 @@
 # @localtools/base64
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/localtools/nodejs-base64/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/localtools/nodejs-base64/tree/main)
+[![codecov](https://codecov.io/gh/localtools/nodejs-base64/branch/main/graph/badge.svg?token=I19QZWD095)](https://codecov.io/gh/localtools/nodejs-base64)
+
+[![Running Code Coverage](https://github.com/localtools/nodejs-base64/actions/workflows/coverage.yml/badge.svg)](https://github.com/localtools/nodejs-base64/actions/workflows/coverage.yml)
+
+[![Node.js build and publish package](https://github.com/localtools/nodejs-base64/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/localtools/nodejs-base64/actions/workflows/npm-publish.yml)
+
+[![Node.js build and publish package on GitHub Registry](https://github.com/localtools/nodejs-base64/actions/workflows/github-npm-publish.yml/badge.svg)](https://github.com/localtools/nodejs-base64/actions/workflows/github-npm-publish.yml)
+
 A Node.js library for encoding and decoding text as Base64.
 
 ## Installation
