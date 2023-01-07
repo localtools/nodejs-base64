@@ -1,6 +1,6 @@
 {
   "name": "@localtools/base64",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Node.js Base64 Text Encoder/Decoder",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
